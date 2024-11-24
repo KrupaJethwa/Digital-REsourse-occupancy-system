@@ -1,0 +1,186 @@
+﻿@model Digital_Resource_Occupancy_System.Models.Student.studentLoginViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            background-color: white;
+        }
+
+        .bg-image {
+            background-image: url('/images/c11.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Full height */
+        }
+
+        .card {
+            background-color: rgb(83, 122, 146);
+            border-radius: 10px;
+            padding: 50px;
+            width: 100%; /* Ensure the card takes up the available width */
+            max-width: 450px; /* Max width for the card */
+        }
+
+        .card-body {
+            background-color: rgb(206, 216, 221);
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .rounded-pill {
+            border-radius: 40px;
+        }
+
+        .shadow-sm {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-primary {
+            color: black;
+        }
+
+        .btn-primary {
+            background-color: rgb(83, 122, 146);
+            border-color: #337ab7;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 40px;
+            width: 100%;
+        }
+
+            .btn-primary:hover {
+                background-color: #23527c;
+                border-color: #23527c;
+            }
+
+        .forgot-password {
+            font-size: 14px;
+            margin: 10px;
+            display: block;
+            text-align: right;
+            font-family: 'Inter';
+            font-weight: 300;
+            color: black !important;
+        }
+
+        /* Style to position the eye toggle inside the input box */
+        .password-container {
+            position: relative;
+        }
+
+            .password-container input {
+                padding-right: 40px; /* Space for the eye icon */
+                color: black; /* Set password text color to black */
+            }
+
+            .password-container .toggle-password {
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+                color: black; /* Eye icon color */
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 d-none d-md-block bg-image"></div>
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
+                <div class="card shadow-lg">
+                    <div class="card-body">
+                        <h3 class="display-7 text-center">Student Login</h3>
+                        <p class="text-muted mb-4 text-center">Enter your credentials to login.</p>
+
+
+
+                        <!-- Display Validation Errors if any -->
+                        @if (ViewData.ModelState.Values.Any(v => v.Errors.Count > 0))
+                        {
+                            <div class="alert alert-danger">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            </div>
+                        }
+                        <form action="/Student/student_Login" method="post">
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-group">
+                                <!-- FacultyId field with validation error message -->
+                                <input id="inputFid" type="text" name="StudentID"
+                                       placeholder="Student ID" value="@Model.StudentID"
+                                       required class="form-control rounded-pill border-0 shadow-sm px-4" />
+                                @Html.ValidationMessageFor(m => m.StudentID, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <!-- Password field with eye toggle inside the input box -->
+                                <div class="password-container">
+                                    <input id="inputPassword" type="Password" name="Password"
+                                           placeholder="Password" required class="form-control rounded-pill border-0 shadow-sm px-4" />
+                                    <span class="toggle-password" onclick="togglePassword()">
+                                        <i class="bi bi-eye" id="togglePasswordIcon"></i>
+                                    </span>
+                                </div>
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="forgot-password">
+                                <a href="#" style="color: black !important;">Forgot password?</a>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary rounded-pill shadow-sm">Login</button>
+                        </form>
+                   
+
+                        <button type="button" class="btn btn-primary rounded-pill shadow-sm mt-2"
+                                onclick="window.location.href='/Student/StudentRegister'">
+                            Don't have an account? Create now!
+                        </button>
+                        <button type="button" class="btn btn-primary rounded-pill shadow-sm mt-2"
+                                onclick="window.location.href='/Home/SelectPersonType'">
+                            Back to select person type
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function togglePassword() {
+            var passwordInput = document.getElementById("inputPassword");
+            var icon = document.getElementById("togglePasswordIcon");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                icon.classList.remove("bi-eye");
+                icon.classList.add("bi-eye-slash");
+            } else {
+                passwordInput.type = "password";
+                icon.classList.remove("bi-eye-slash");
+                icon.classList.add("bi-eye");
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+

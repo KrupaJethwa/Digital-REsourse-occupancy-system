@@ -1,0 +1,343 @@
+﻿@model IEnumerable<Digital_Resource_Occupancy_System.Models.LabReportModel>
+
+@using System.Linq
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Load jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Load jsPDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.24/jspdf.plugin.autotable.min.js"></script>
+
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            background-color: white;
+        }
+
+        .table {
+            margin-top: 20px;
+            background-color: rgb(83, 122, 146);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+            .table thead th {
+                background-color: rgb(83, 122, 146); /* Same as button color */
+                color: white; /* Text color white */
+                text-align: center;
+            }
+
+        .text-primary {
+            color: black;
+        }
+
+        .btn-primary {
+            background-color: rgb(83, 122, 146);
+            border-color: #337ab7;
+            padding: 10px 10px;
+            font-size: 16px;
+            border-radius: 40px;
+            width: 100%;
+        }
+
+            .btn-primary:hover {
+                background-color: #23527c;
+                border-color: #23527c;
+            }
+
+      
+        .form-control {
+            width: 100%;
+            margin-bottom: 15px;
+            background-color: #f0f4f7; /* Light gray background color */
+            border: 1px solid #55778b; /* Border color to match your button and table colors */
+            color: #333; /* Text color */
+        }
+
+            .form-control:focus {
+                border-color: #55778b; /* Border color on focus */
+                box-shadow: 0 0 5px rgba(85, 119, 139, 0.5); /* Light shadow to indicate focus */
+            }
+
+            .form-control::placeholder {
+                color: #9e9e9e; /* Placeholder text color */
+            }
+
+        .rounded-pill {
+            border-radius: 40px;
+        }
+
+        .shadow-sm {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-search, .btn-dow {
+            background-color: rgb(83, 122, 146);
+            border-color: #337ab7;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 40px;
+            width: auto;
+            color: white;
+        }
+
+            .btn-dow:hover, .btn-search:hover {
+                background-color: #23527c;
+                border-color: #23527c;
+            }
+
+        .search-form {
+            margin: 5px 0;
+            justify-content: flex-start;
+        }
+
+        .button-group {
+            margin-top: 20px;
+        }
+
+            .button-group .btn {
+                width: auto;
+                margin: 0 10px;
+            }
+
+        .action-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .search-form {
+            margin: 20px 0;
+        }
+
+        #downloadPdfBtn {
+            position: fixed;
+            top:250px;
+            right: 200px;
+            z-index: 1000;
+        }
+
+        .filter-form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            margin-bottom: 20px;
+        }
+
+            .filter-form .form-group {
+                margin-right: 10px;
+                margin-bottom: 10px;
+            }
+
+        .alert {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="text-center mt-5">Reports</h2>
+
+        <br />
+        <br />
+        <!-- Download Button -->
+        <div class="text-center mt-3">
+            <button id="downloadPdfBtn" class="btn btn-dow">Download</button>
+        </div>
+
+        <!-- Search Form with Filters -->
+        <div class="filter-form">
+            <form method="get" action="/Faculty/Reports" class="d-flex align-items-center">
+                <div class="form-group">
+                    <b><label for="searchLabNo" class="me-2 mb-0">LabNo:</label></b>
+                    <input type="number" id="searchLabNo" name="labNo" placeholder="search LabNo" class="form-control rounded-pill border-0 shadow-sm px-4" />
+                </div>
+
+                <div class="form-group">
+                    <b><label for="searchDayOfWeek" class="me-2 mb-0">Day:</label></b>
+                    <select id="searchDayOfWeek" name="dayOfWeek" class="form-control rounded-pill border-0 shadow-sm px-4">
+                        <option value="">--Select Day--</option>
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                        <option value="Saturday">Saturday</option>
+                        <option value="Sunday">Sunday</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <b><label for="date">Date:</label></b>
+                    <input type="date" id="date" name="date" class="form-control rounded-pill border-0 shadow-sm px-4" value="@Request.QueryString["date"]" />
+                </div>
+
+                <div class="form-group">
+                    <b><label for="Program">Program:</label></b>
+                    <input type="text" id="Program" name="Program" placeholder="Program" class="form-control rounded-pill border-0 shadow-sm px-4" value="@Request.QueryString["Program"]" />
+                </div>
+
+                <div class="form-group">
+                    <b><label for="Collegeyear">Collegeyear:</label></b>
+                    <input type="number" id="Collegeyear" name="Collegeyear" placeholder="Collegeyear" class="form-control rounded-pill border-0 shadow-sm px-4" value="@Request.QueryString["Collegeyear"]" />
+                </div>
+
+
+
+                <div class="form-group">
+                    <b><label for="Semester">Semester:</label></b>
+                    <input type="number" id="Semester" name="Semester" placeholder="Semester" class="form-control rounded-pill border-0 shadow-sm px-4" value="@Request.QueryString["Semester"]" />
+                </div>
+
+                <div class="form-group">
+                    <b><label for="SubCode">SubCode:</label></b>
+                    <input type="text" id="SubCode" name="SubCode" placeholder="SubCode" class="form-control rounded-pill border-0 shadow-sm px-4" value="@Request.QueryString["SubCode"]" />
+                </div>
+
+                <div class="form-group">
+                    <b><label for="Division">Division:</label></b>
+                    <input type="number" id="Division" name="Division" placeholder="Division" class="form-control rounded-pill border-0 shadow-sm px-4" value="@Request.QueryString["Division"]" />
+                </div>
+
+                <button type="submit" class="btn btn-search">Search</button>
+            </form>
+        </div>
+
+        <!-- Total Students -->
+        <div class="text-center mt-3">
+            <h5>Total Students: @ViewBag.TotalStudents</h5>
+        </div>
+
+        <!-- Attendance Table -->
+        @if (!Model.Any())
+        {
+            <div class="alert alert-warning text-center mt-3">
+                No Records are available
+            </div>
+        }
+        else
+        {
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>LabNo</th>
+                        <th>StudentId</th>
+                        <th>Email</th>
+                        <th>program</th>
+                        <th>collageyear</th>
+                        <th>sem</th>
+                        <th>div</th>
+                        <th>subjectcode</th>
+                        <th>PcIpaddresss</th>
+                        <th>Registariondate/time</th>
+                        <th>DayofWeek</th>
+                        <th>StartTime</th>
+                        <th>EndTime</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.LabNo</td>
+                            <td>@item.StudentID</td>
+                            <td>@item.StudentEmail</td>
+                            <td>@item.Program</td>
+                            <td>@item.CollageYear</td>
+                            <td>@item.Div</td>
+                            <td>@item.Sem</td>
+                            <td>@item.SubCode</td>
+                            <td>@item.PCIPAddress</td>
+                            <td>@item.RegistrationTime</td>
+                            <td>@item.DayOfWeek</td>
+                            <td>@item.StartTime.ToString(@"hh\:mm")</td>
+                            <td>@item.EndTime.ToString(@"hh\:mm")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+
+        <!-- Back Button -->
+        <div class="text-center mt-4">
+            <button type="button" class="btn btn-primary" onclick="window.location.href='/Faculty/FacultyDashboard'">Back</button>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('downloadPdfBtn').addEventListener('click', function () {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF('p', 'mm', 'a4');  // Set the page size to A4 (portrait mode)
+
+                // Set up custom page dimensions if needed for larger width (A4 is already quite large)
+                const pageWidth = doc.internal.pageSize.width; // A4 width
+                const pageHeight = doc.internal.pageSize.height; // A4 height
+
+                // Add a header to the page (title at the top)
+                doc.setFontSize(16);
+                doc.text("Lab Resourse Report", 14, 10);  // Title at the top
+
+                // Add a footer with page numbers
+                const addFooter = function (pageNumber) {
+                    doc.setFontSize(10);
+                    doc.text(`Page ${pageNumber}`, pageWidth - 30, pageHeight - 10);
+                };
+
+                // Get the table element
+                const table = document.querySelector("table");
+
+                // Calculate the total number of students (number of rows in the table, excluding the header)
+                const totalStudents = table.rows.length - 1;  // assuming first row is the header
+
+                // Add the "Total Students" text below the header
+                doc.setFontSize(12);
+                doc.text("Total Students: " + totalStudents, 14, 20);
+
+                // Convert the HTML table to PDF and position it below the "Total Students" text
+                doc.autoTable({
+                    html: table,
+                    startY: 30,   // Starting position for the table
+                    margin: { top: 10, bottom: 30 }, // margin from the edges
+                    theme: 'grid', // Add gridlines to the table
+                    headStyles: {
+                        fillColor: [0, 86, 179],  // Set the background color of the header to the custom blue (RGB format)
+                        textColor: [255, 255, 255],  // Set text color to white for contrast
+                        fontStyle: 'bold',  // Make header text bold
+                    },
+                    bodyStyles: { valign: 'top' },  // Ensure text is aligned to the top of cells
+                    styles: {
+                        overflow: 'linebreak', // Ensure long text wraps properly
+                        cellWidth: 'auto', // Cells should auto-size based on content
+                    },
+                });
+
+                // Add footer with page number (starting with 1)
+                addFooter(1);  // Add footer to the first page
+
+                // Save the PDF with a filename
+                doc.save('LabResourse_report.pdf');
+            });
+        });
+    </script>
+
+
+
+
+</body>
+</html>

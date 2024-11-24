@@ -1,0 +1,69 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\MCA\\Minor project\\Digital Resource Occupancy System\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F60E3105-3E53-428F-9A1B-E623EA21F3A5}|Digital Resource Occupancy System.csproj|d:\\mca\\minor project\\digital resource occupancy system\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F60E3105-3E53-428F-9A1B-E623EA21F3A5}|Digital Resource Occupancy System.csproj|solutionrelative:controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F60E3105-3E53-428F-9A1B-E623EA21F3A5}|Digital Resource Occupancy System.csproj|D:\\MCA\\Minor project\\Digital Resource Occupancy System\\views\\faculty\\studentdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F60E3105-3E53-428F-9A1B-E623EA21F3A5}|Digital Resource Occupancy System.csproj|solutionrelative:views\\faculty\\studentdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F60E3105-3E53-428F-9A1B-E623EA21F3A5}|Digital Resource Occupancy System.csproj|D:\\MCA\\Minor project\\Digital Resource Occupancy System\\views\\faculty\\studentlabregisterdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F60E3105-3E53-428F-9A1B-E623EA21F3A5}|Digital Resource Occupancy System.csproj|solutionrelative:views\\faculty\\studentlabregisterdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StudentController.cs",
+              "DocumentMoniker": "D:\\MCA\\Minor project\\Digital Resource Occupancy System\\Controllers\\StudentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StudentController.cs",
+              "ToolTip": "D:\\MCA\\Minor project\\Digital Resource Occupancy System\\Controllers\\StudentController.cs",
+              "RelativeToolTip": "Controllers\\StudentController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T03:41:49.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StudentDetails.cshtml",
+              "DocumentMoniker": "D:\\MCA\\Minor project\\Digital Resource Occupancy System\\Views\\Faculty\\StudentDetails.cshtml",
+              "RelativeDocumentMoniker": "Views\\Faculty\\StudentDetails.cshtml",
+              "ToolTip": "D:\\MCA\\Minor project\\Digital Resource Occupancy System\\Views\\Faculty\\StudentDetails.cshtml",
+              "RelativeToolTip": "Views\\Faculty\\StudentDetails.cshtml",
+              "ViewState": "AgIAAJUAAAAANDMzMzMrwKkAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-14T03:31:22.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StudentLabRegisterDetails.cshtml",
+              "DocumentMoniker": "D:\\MCA\\Minor project\\Digital Resource Occupancy System\\Views\\Faculty\\StudentLabRegisterDetails.cshtml",
+              "RelativeDocumentMoniker": "Views\\Faculty\\StudentLabRegisterDetails.cshtml",
+              "ToolTip": "D:\\MCA\\Minor project\\Digital Resource Occupancy System\\Views\\Faculty\\StudentLabRegisterDetails.cshtml",
+              "RelativeToolTip": "Views\\Faculty\\StudentLabRegisterDetails.cshtml",
+              "ViewState": "AgIAAKsAAAAAAQAAAAAEwMAAAACJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-14T03:25:59.689Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

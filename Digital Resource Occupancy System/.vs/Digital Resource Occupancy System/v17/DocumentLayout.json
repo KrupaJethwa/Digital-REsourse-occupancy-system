@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\MCA\\Minor project\\Digital Resource Occupancy System\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F60E3105-3E53-428F-9A1B-E623EA21F3A5}|Digital Resource Occupancy System.csproj|d:\\mca\\minor project\\digital resource occupancy system\\views\\faculty\\facultydashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F60E3105-3E53-428F-9A1B-E623EA21F3A5}|Digital Resource Occupancy System.csproj|solutionrelative:views\\faculty\\facultydashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F60E3105-3E53-428F-9A1B-E623EA21F3A5}|Digital Resource Occupancy System.csproj|d:\\mca\\minor project\\digital resource occupancy system\\controllers\\facultycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F60E3105-3E53-428F-9A1B-E623EA21F3A5}|Digital Resource Occupancy System.csproj|solutionrelative:controllers\\facultycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F60E3105-3E53-428F-9A1B-E623EA21F3A5}|Digital Resource Occupancy System.csproj|d:\\mca\\minor project\\digital resource occupancy system\\views\\faculty\\studentdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F60E3105-3E53-428F-9A1B-E623EA21F3A5}|Digital Resource Occupancy System.csproj|solutionrelative:views\\faculty\\studentdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F60E3105-3E53-428F-9A1B-E623EA21F3A5}|Digital Resource Occupancy System.csproj|d:\\mca\\minor project\\digital resource occupancy system\\views\\lab\\viewlabtimetable.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F60E3105-3E53-428F-9A1B-E623EA21F3A5}|Digital Resource Occupancy System.csproj|solutionrelative:views\\lab\\viewlabtimetable.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/Digital_ResourceDB/True/SqlTable/dbo.Tbl_Student.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F60E3105-3E53-428F-9A1B-E623EA21F3A5}|Digital Resource Occupancy System.csproj|d:\\mca\\minor project\\digital resource occupancy system\\controllers\\labcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F60E3105-3E53-428F-9A1B-E623EA21F3A5}|Digital Resource Occupancy System.csproj|solutionrelative:controllers\\labcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FacultyDashboard.cshtml",
+              "DocumentMoniker": "D:\\MCA\\Minor project\\Digital Resource Occupancy System\\Views\\Faculty\\FacultyDashboard.cshtml",
+              "RelativeDocumentMoniker": "Views\\Faculty\\FacultyDashboard.cshtml",
+              "ToolTip": "D:\\MCA\\Minor project\\Digital Resource Occupancy System\\Views\\Faculty\\FacultyDashboard.cshtml",
+              "RelativeToolTip": "Views\\Faculty\\FacultyDashboard.cshtml",
+              "ViewState": "AgIAAEEAAAAANDMzMzP7v1MAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-02T15:37:41.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ViewLabTimeTable.cshtml",
+              "DocumentMoniker": "D:\\MCA\\Minor project\\Digital Resource Occupancy System\\Views\\Lab\\ViewLabTimeTable.cshtml",
+              "RelativeDocumentMoniker": "Views\\Lab\\ViewLabTimeTable.cshtml",
+              "ToolTip": "D:\\MCA\\Minor project\\Digital Resource Occupancy System\\Views\\Lab\\ViewLabTimeTable.cshtml",
+              "RelativeToolTip": "Views\\Lab\\ViewLabTimeTable.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-02T15:26:18.547Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StudentDetails.cshtml",
+              "DocumentMoniker": "D:\\MCA\\Minor project\\Digital Resource Occupancy System\\Views\\Faculty\\StudentDetails.cshtml",
+              "RelativeDocumentMoniker": "Views\\Faculty\\StudentDetails.cshtml",
+              "ToolTip": "D:\\MCA\\Minor project\\Digital Resource Occupancy System\\Views\\Faculty\\StudentDetails.cshtml",
+              "RelativeToolTip": "Views\\Faculty\\StudentDetails.cshtml",
+              "ViewState": "AgIAALoAAAAAAAAAAAAswNAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-02T15:23:55.944Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LabController.cs",
+              "DocumentMoniker": "D:\\MCA\\Minor project\\Digital Resource Occupancy System\\Controllers\\LabController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LabController.cs",
+              "ToolTip": "D:\\MCA\\Minor project\\Digital Resource Occupancy System\\Controllers\\LabController.cs",
+              "RelativeToolTip": "Controllers\\LabController.cs",
+              "ViewState": "AgIAAGsBAAAAwszMzIwmwA0AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-02T14:47:10.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FacultyController.cs",
+              "DocumentMoniker": "D:\\MCA\\Minor project\\Digital Resource Occupancy System\\Controllers\\FacultyController.cs",
+              "RelativeDocumentMoniker": "Controllers\\FacultyController.cs",
+              "ToolTip": "D:\\MCA\\Minor project\\Digital Resource Occupancy System\\Controllers\\FacultyController.cs",
+              "RelativeToolTip": "Controllers\\FacultyController.cs",
+              "ViewState": "AgIAAMIAAAAABQAAAAAkwNAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-02T14:46:23.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "dbo.Tbl_Student [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/Digital_ResourceDB/True/SqlTable/dbo.Tbl_Student.sql",
+              "ToolTip": "dbo.Tbl_Student [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-10-02T15:32:16.993Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
